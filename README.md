@@ -1,0 +1,1 @@
+# This is the base template created to host the Jitter API using a MongoDB database
