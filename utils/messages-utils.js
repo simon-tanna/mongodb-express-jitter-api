@@ -10,4 +10,18 @@ const postNewMessage = (body) => {
 	return Message(body);
 };
 
-module.exports = { getAllMessages, getMessageById, postNewMessage };
+const deleteMessage = (id) => Message.findByIdAndRemove(id);
+
+const changeMessage = (id, body) => {
+	let date = Date.now();
+	body.posted = date;
+	return Message.findByIdAndUpdate(id, body, { new: true });
+};
+
+module.exports = {
+	getAllMessages,
+	getMessageById,
+	postNewMessage,
+	deleteMessage,
+	changeMessage,
+};
